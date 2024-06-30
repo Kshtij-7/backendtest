@@ -5,7 +5,7 @@ const port = 3000;
 const cors=require("cors");
 require("dotenv").config();
 console.log("hi");
-const mySecret = process.env["apiKeyTest"];
+const mySecret = process.env.mySecret;
 app.use(cors({
   origin: 'https://kshtij-7.github.io'
 }));
