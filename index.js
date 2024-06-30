@@ -10,7 +10,16 @@ app.use(cors({
   origin: 'https://kshtij-7.github.io'
 }));
 app.get("/api/secret", (req, res) => {
-  res.json({ apiKey: mySecret });
+  if (
+    (referer && referer.startsWith("https://kshtij-7.github.io")) ||
+    respsonse
+  ) {
+    console.log(referer);
+    res.json({ apiKey: mySecret });
+  } else {
+    console.log(referer, origin);
+    res.status(403).send("Forbidden");
+  }
   console.log("reqest happens");
 });
 
