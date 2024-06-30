@@ -10,6 +10,8 @@ app.use(cors({
   origin: 'https://kshtij-7.github.io'
 }));
 app.get("/api/secret", (req, res) => {
+  const referer = req.get('Referer');
+  const origin = req.get('Origin');
   if (
     (referer && referer.startsWith("https://kshtij-7.github.io")) ||
     respsonse
