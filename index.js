@@ -14,7 +14,7 @@ app.get("/api/secret", (req, res) => {
   const origin = req.get('Origin');
   if (
     (referer && referer.startsWith("https://kshtij-7.github.io")) ||
-    respsonse
+    origin && origin.startsWith("https://kshtij-7.github.io")
   ) {
     console.log(referer);
     res.json({ apiKey: mySecret });
